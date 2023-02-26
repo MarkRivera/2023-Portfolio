@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Navigation from './Navigation/Navigation';
 import AnimatedLogo from './AnimatedLogo';
 
 
@@ -16,10 +17,21 @@ function App() {
   }, [])
 
   return (
-    <>
+    <main className='mt-20'>
       <AnimatedLogo />
-      <main>Hi</main>
-    </>
+
+      {/* Navigation */}
+      <Navigation />
+
+      {/* Hero */}
+
+      {/* About */}
+
+      {/* Resume */}
+
+      {/* Projects */}
+      <section className='h-[200vh]'>Hi</section>
+    </main>
   )
 }
 

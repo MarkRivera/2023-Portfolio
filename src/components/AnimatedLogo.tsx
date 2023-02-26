@@ -6,7 +6,6 @@ const AnimatedLogo = () => {
   const top = useMotionValue("0%"); // this is the value that will be animated
   const [isAnimating, setIsAnimating] = useState(true);
 
-
   useMotionValueEvent(top, "animationComplete", () => { // this is the event that will be fired when the animation is complete
     setIsAnimating(false);
   })
