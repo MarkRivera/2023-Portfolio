@@ -6,7 +6,7 @@ module.exports = {
     extend: {
 			colors: {
 				primary: "#11001c",
-        secondary: "#e38125",
+				secondary: "#e38125",
 				// Need color for my name and links
 				// Need color for social media
 				// Hover states
