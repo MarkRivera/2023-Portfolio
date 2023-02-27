@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Navigation from './Navigation/Navigation';
 import AnimatedLogo from './AnimatedLogo';
 import HeroSection from './HeroSection';
+import AboutSection from './AboutSection';
 
 
 function App() {
@@ -28,11 +29,11 @@ function App() {
       <HeroSection />
 
       {/* About */}
+      <AboutSection />
 
       {/* Resume */}
 
       {/* Projects */}
-      <section className='h-[200vh]'>Hi</section>
     </main>
   )
 }
