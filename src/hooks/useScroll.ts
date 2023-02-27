@@ -1,12 +1,16 @@
 import { useEffect, useRef } from "react";
+import { useWindow } from "./useWindow";
 
 export function useScroll(nav: { current: HTMLElement | null }) {
+  const windowWidth = useWindow();
   const prevScrollPos = useRef(window.scrollY);
   const hiddenStyles = "transform: translateY(-100%); transition: transform 0.3s ease-in-out;"
   const showStyles = "transform: translateY(0); transition: transform 0.3s ease-in-out;"
 
   useEffect(() => {
     const handleScroll = () => {
+      if (windowWidth < 768) return; // If screen is smaller than 768px, don't hide nav (mobile)
+
       const currentScrollPos = window.scrollY; // Grab current scroll position
 
       if (nav && nav.current) { // Check if Nav exists

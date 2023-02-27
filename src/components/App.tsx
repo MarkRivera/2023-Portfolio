@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Navigation from './Navigation/Navigation';
 import AnimatedLogo from './AnimatedLogo';
+import HeroSection from './HeroSection';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Navigation />
 
       {/* Hero */}
+      <HeroSection />
 
       {/* About */}
 
