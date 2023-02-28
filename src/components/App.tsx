@@ -19,7 +19,7 @@ function App() {
   }, [])
 
   return (
-    <main className='mt-20'>
+    <main className='mt-20 max-w-7xl mx-auto relative'>
       <AnimatedLogo />
 
       {/* Navigation */}

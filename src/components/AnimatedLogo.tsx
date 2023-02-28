@@ -14,7 +14,7 @@ const AnimatedLogo = () => {
     <AnimatePresence>
       {isAnimating && (
         <motion.div
-          className='flex flex-col justify-center items-center min-h-screen mx-auto absolute w-full h-full top-0 left-0 z-50 bg-primary'
+          className='flex flex-col justify-center items-center min-h-screen mx-auto fixed w-full h-full top-0 left-0 z-50 bg-primary'
           key='container'
         >
           <motion.div

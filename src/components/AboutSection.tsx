@@ -1,44 +1,83 @@
-import { useRef } from 'react';
 import closeup from '../images/close-up-face.jpg'
+import Section from './Section'
+
+const TechList = () => {
+  const tech = [
+    'React',
+    'Next.js',
+    'Node.js',
+    'Express',
+    'MongoDB',
+    'PostgreSQL',
+    'TypeScript',
+    'JavaScript',
+    'HTML',
+    'CSS',
+    'Sass',
+    'tRPC'
+  ]
+
+  return <ul className='flex flex-col flex-wrap h-32'>
+    {tech.map((tech, index) => {
+      return <li key={index} className='flex items-center'>
+        <Arrow />
+        <span>{tech}</span>
+      </li>
+    })}
+  </ul>
+}
+
+const Arrow = () => {
+  return <svg className='inline-block mr-2' width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 5L10 5" stroke="#da62c4" strokeWidth="2" />
+    <path d="M5 0L10 5L5 10" stroke="#da62c4" strokeWidth="2" />
+  </svg>
+}
+
+const About = () => {
+  return <section className="flex flex-col md:grid md:grid-flow- md:grid-cols-2 px-16">
+    <aside className='md:mr-16'>
+      <p className='my-4 w-auto self-center'>
+        Hi there! I'm Mark and I enjoy creating software to help others! I've had the privilege to work with companies and non-profits such as
+        <a
+          className='bg-clip-text text-transparent font-bold ml-1'
+          style={{
+            background: 'linear-gradient(45deg, rgb(155, 10, 238), #da62c4 30%, white 60%)',
+            backgroundSize: "400%",
+            backgroundPosition: "0%",
+            WebkitBackgroundClip: "text",
+          }}
+          href='https://humanrightsfirst.org/'>
+          Human Rights First</a>,
+
+        <a
+          className='bg-clip-text text-transparent font-bold ml-1'
+          style={{
+            background: 'linear-gradient(45deg, rgb(155, 10, 238), #da62c4 30%, white 60%)',
+            backgroundSize: "400%",
+            backgroundPosition: "0%",
+            WebkitBackgroundClip: "text",
+          }}
+          href='https://roll20.net/'> Roll 20</a>, SvnStar and more.</p>
+      <p className='mb-8 w-auto'>These days, I focus on creating inclusive and accessible software to help those who need it most.</p>
+    </aside>
+    <div className='relative h-2/3 w-2/3 mb-8 min-w-full md:mb-0 mx-auto md:w-full md:h-auto md:left-0 md:right-0 md:mx-0'>
+      <div
+        className='absolute z-20 rounded-lg top-0 left-1/3 w-1/3 md:w-full md:left-0 h-full bg-secondary opacity-40 transition-all duration-300 hover:opacity-100 hover:bg-transparent'
+      ></div>
+
+      <img className='rounded-lg relative left-1/3 z-10 w-1/3 h-1/3 md:w-auto md:h-full self-center md:left-0' src={closeup} alt="face of Mark Rivera" />
+    </div>
+    <div className='mt-4'>
+      <p className='mb-4'>Some technologies I work with include: </p>
+      <TechList />
+    </div>
+  </section>
+}
 
 const AboutSection = () => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const shiftBorderDiv = () => {
-    if (ref.current) {
-      ref.current.classList.add('left-[53%]');
-    }
-  }
-
-  const unshiftBorderDiv = () => {
-    if (ref.current) {
-      ref.current.classList.remove('left-[53%]');
-    }
-  }
-
   return (
-    <section className="flex flex-col">
-      <header>
-        <h2 className="text-3xl font-semibold ml-16">
-          <span className='text-lg text-secondary mr-2'>01.</span>
-          About Me
-        </h2>
-      </header>
-      <p className='my-4 mx-16 w-auto self-center'>Hi there! I'm Mark and I enjoy creating software to help others! I've had the privilege to work with companies and non-profits such as <a href='https://humanrightsfirst.org/'>Human Rights First</a>, <a href='https://roll20.net/'>Roll 20</a>, SvnStar and more.</p>
-      <p className='mx-16 mb-8 w-auto'>These days, I focus on creating inclusive and accessible software to help those who need it most.</p>
-
-      <div className='relative flex justify-center mb-8'>
-        <div
-          className='absolute z-20 rounded-lg top-0 left-1/2 -translate-x-1/2 w-1/3 h-full bg-secondary opacity-40 transition-all duration-300 hover:opacity-100 hover:bg-transparent cursor-pointer'
-          onMouseEnter={shiftBorderDiv}
-          onMouseLeave={unshiftBorderDiv}
-        ></div>
-
-        <div className='absolute z-10 rounded-lg top-6 left-[55%] border-solid border-2 border-secondary -translate-x-1/2 w-1/3 h-full opacity-40 transition-all duration-300 cursor-pointer' ref={ref}></div>
-
-        <img className='rounded-lg relative z-10 w-1/3 h-1/3 self-center' src={closeup} alt="face of Mark Rivera" />
-      </div>
-    </section>
+    <Section number={"01"} title='About Me' children={<About />} />
   )
 }
 
