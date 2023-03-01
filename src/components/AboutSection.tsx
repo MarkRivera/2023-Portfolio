@@ -1,4 +1,5 @@
 import closeup from '../images/close-up-face.jpg'
+import { Arrow } from './Arrow'
 import Section from './Section'
 
 const TechList = () => {
@@ -17,7 +18,7 @@ const TechList = () => {
     'tRPC'
   ]
 
-  return <ul className='flex flex-col flex-wrap h-32'>
+  return <ul className='flex flex-col flex-wrap sm:h-32'>
     {tech.map((tech, index) => {
       return <li key={index} className='flex items-center'>
         <Arrow />
@@ -27,15 +28,10 @@ const TechList = () => {
   </ul>
 }
 
-const Arrow = () => {
-  return <svg className='inline-block mr-2' width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 5L10 5" stroke="#da62c4" strokeWidth="2" />
-    <path d="M5 0L10 5L5 10" stroke="#da62c4" strokeWidth="2" />
-  </svg>
-}
+
 
 const About = () => {
-  return <section className="flex flex-col md:grid md:grid-flow- md:grid-cols-2 px-16">
+  return <section className="flex flex-col mb-16 md:grid md:grid-flow- md:grid-cols-2 px-16">
     <aside className='md:mr-16'>
       <p className='my-4 w-auto self-center'>
         Hi there! I'm Mark and I enjoy creating software to help others! I've had the privilege to work with companies and non-profits such as

@@ -3,6 +3,7 @@ import Navigation from './Navigation/Navigation';
 import AnimatedLogo from './AnimatedLogo';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
+import ResumeSection from './ResumeSection';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <AboutSection />
 
       {/* Resume */}
+      <ResumeSection />
 
       {/* Projects */}
     </main>
