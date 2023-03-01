@@ -5,51 +5,24 @@ const HeroSection = () => {
       className="h-screen min-h-screen flex flex-col pt-16 md:pt-32 px-4 md:px-16 lg:px-24 lg:w-2/3"
     >
       <h1 className="text-lg font-thin text-white mb-4">Oh hi, I'm</h1>
-      <p className="font-extrabold text-6xl lg:text-8xl bg-clip-text text-transparent" style={{
-        background: 'linear-gradient(45deg, rgb(155, 10, 238), #da62c4 30%, white 60%)',
-        backgroundSize: "400%",
-        backgroundPosition: "0%",
-        WebkitBackgroundClip: "text",
-      }}>Mark Rivera.</p>
-      <p className="text-2xl md:text-5xl lg:w-7xl bg-clip-text text-transparent font-semibold"
-        style={{
-          background: 'linear-gradient(45deg, rgba(155, 10, 238, 0.8), #da62c433 40%, #ffffff33 60%)',
-          backgroundSize: "400%",
-          backgroundPosition: "0%",
-          WebkitBackgroundClip: "text",
-        }}>
+      <p className="font-extrabold text-6xl lg:text-8xl bg-clip-text text-transparent text-gradient">Mark Rivera.</p>
+      <p className="text-2xl md:text-5xl lg:w-7xl bg-clip-text text-transparent font-semibold text-gradient-dark">
         Software engineer that loves Z-rated movies.
       </p>
-      <p className="text-xl md:text-2xl mt-6 md:mt-12 bg-clip-text text-transparent font-semibold"
-        style={{
-          background: 'linear-gradient(45deg, rgba(155, 10, 238, 0.8), #da62c433 40%, #ffffff33 60%)',
-          backgroundSize: "400%",
-          backgroundPosition: "0%",
-          WebkitBackgroundClip: "text",
-        }}>
+      <p className="text-xl md:text-2xl mt-6 md:mt-12 bg-clip-text text-transparent font-semibold text-gradient-dark">
         I love to create applications that solve real problems especially for those
         who are in need. I'm currently working as a software engineer at
         <a
           href="https://glimpse-neon.vercel.app/"
-          className="font-bold"
+          className="font-bold text-gradient"
           target="_blank"
-          style={{
-            background: 'linear-gradient(45deg, rgb(155, 10, 238), #da62c4 30%, white 60%)',
-            backgroundSize: "400%",
-            backgroundPosition: "0%",
-            WebkitBackgroundClip: "text",
-          }}
+
         > SurvAI
         </a> and I'm also a <a
           href="https://beta.reactjs.org/"
-          className="font-bold"
+          className="font-bold text-gradient"
           target="_blank"
-          style={{
-            background: 'linear-gradient(45deg, rgb(155, 10, 238), #da62c4 30%, white 60%)',
-            backgroundSize: "400%",
-            backgroundPosition: "0%",
-            WebkitBackgroundClip: "text",
-          }}>React</a> enthusiast.
+        >React</a> enthusiast.
       </p>
 
       <a

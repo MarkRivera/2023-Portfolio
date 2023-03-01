@@ -1,0 +1,15 @@
+.text-gradient {
+  background: linear-gradient(45deg, rgb(155, 10, 238), #da62c4 30%, white 60%);
+  background-size: 400%;
+  background-position: 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.text-gradient-dark {
+  background: linear-gradient(45deg, rgba(155, 10, 238, 0.8), #da62c433 40%, #ffffff33 60%);
+  background-size: 400%;
+  background-position: 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}

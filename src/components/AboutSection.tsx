@@ -36,24 +36,13 @@ const About = () => {
       <p className='my-4 w-auto self-center'>
         Hi there! I'm Mark and I enjoy creating software to help others! I've had the privilege to work with companies and non-profits such as
         <a
-          className='bg-clip-text text-transparent font-bold ml-1'
-          style={{
-            background: 'linear-gradient(45deg, rgb(155, 10, 238), #da62c4 30%, white 60%)',
-            backgroundSize: "400%",
-            backgroundPosition: "0%",
-            WebkitBackgroundClip: "text",
-          }}
+          className='bg-clip-text text-transparent font-bold ml-1 text-gradient'
           href='https://humanrightsfirst.org/'>
           Human Rights First</a>,
 
         <a
-          className='bg-clip-text text-transparent font-bold ml-1'
-          style={{
-            background: 'linear-gradient(45deg, rgb(155, 10, 238), #da62c4 30%, white 60%)',
-            backgroundSize: "400%",
-            backgroundPosition: "0%",
-            WebkitBackgroundClip: "text",
-          }}
+          className='bg-clip-text text-transparent font-bold ml-1 text-gradient'
+
           href='https://roll20.net/'> Roll 20</a>, SvnStar and more.</p>
       <p className='mb-8 w-auto'>These days, I focus on creating inclusive and accessible software to help those who need it most.</p>
     </aside>
