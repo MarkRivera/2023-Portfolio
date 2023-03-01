@@ -4,13 +4,13 @@ import Section from './Section'
 
 const TechList = () => {
   const tech = [
+    'TypeScript',
     'React',
     'Next.js',
     'Node.js',
     'Express',
     'MongoDB',
     'PostgreSQL',
-    'TypeScript',
     'JavaScript',
     'HTML',
     'CSS',
@@ -18,7 +18,7 @@ const TechList = () => {
     'tRPC'
   ]
 
-  return <ul className='flex flex-col flex-wrap sm:h-32'>
+  return <ul className='flex flex-col flex-wrap h-20'>
     {tech.map((tech, index) => {
       return <li key={index} className='flex items-center'>
         <Arrow />
@@ -31,7 +31,7 @@ const TechList = () => {
 
 
 const About = () => {
-  return <section className="flex flex-col mb-16 md:grid md:grid-flow- md:grid-cols-2 px-16">
+  return <section className="flex flex-col mb-16 md:grid md:grid-flow- md:grid-cols-2 px-12">
     <aside className='md:mr-16'>
       <p className='my-4 w-auto self-center'>
         Hi there! I'm Mark and I enjoy creating software to help others! I've had the privilege to work with companies and non-profits such as
@@ -45,17 +45,13 @@ const About = () => {
 
           href='https://roll20.net/'> Roll 20</a>, SvnStar and more.</p>
       <p className='mb-8 w-auto'>These days, I focus on creating inclusive and accessible software to help those who need it most.</p>
+      <div className='mt-4'>
+        <p className='mb-4'>Some technologies I work with include: </p>
+        <TechList />
+      </div>
     </aside>
-    <div className='relative h-2/3 w-2/3 mb-8 min-w-full md:mb-0 mx-auto md:w-full md:h-auto md:left-0 md:right-0 md:mx-0'>
-      <div
-        className='absolute z-20 rounded-lg top-0 left-1/3 w-1/3 md:w-full md:left-0 h-full bg-secondary opacity-40 transition-all duration-300 hover:opacity-100 hover:bg-transparent'
-      ></div>
-
-      <img className='rounded-lg relative left-1/3 z-10 w-1/3 h-1/3 md:w-auto md:h-full self-center md:left-0' src={closeup} alt="face of Mark Rivera" />
-    </div>
-    <div className='mt-4'>
-      <p className='mb-4'>Some technologies I work with include: </p>
-      <TechList />
+    <div className='relative h-2/3 w-2/3 max-w-96 max-h-96 mb-8 min-w-full md:mb-0 mx-auto md:h-auto md:left-0 md:right-0 md:mx-0'>
+      <img className='rounded-lg mx-auto mt-4 w-56 md:w-auto md:h-full self-center md:left-0' src={closeup} alt="face of Mark Rivera" />
     </div>
   </section>
 }

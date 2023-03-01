@@ -61,7 +61,7 @@ const Navigation = () => {
 
   // Collapsible nav menu for mobile
   return <nav
-    className="flex fixed right-0 top-0 shadow-xl justify-between items-center h-20 w-full px-8 bg-primary"
+    className="flex fixed z-40 right-0 top-0 shadow-xl justify-between items-center h-20 w-full px-8 bg-primary"
     ref={nav}>
 
     <NavLogo />

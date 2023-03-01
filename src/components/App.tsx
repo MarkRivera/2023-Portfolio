@@ -4,6 +4,7 @@ import AnimatedLogo from './AnimatedLogo';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ResumeSection from './ResumeSection';
+import ProjectSection from './ProjectSection';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
   }, [])
 
   return (
-    <main className='mt-20 max-w-7xl mx-auto relative scrollbar scrollbar-track-secondary'>
+    <main className='mt-20 max-w-7xl mx-auto relative'>
       <AnimatedLogo />
 
       {/* Navigation */}
@@ -36,6 +37,7 @@ function App() {
       <ResumeSection />
 
       {/* Projects */}
+      <ProjectSection />
     </main>
   )
 }

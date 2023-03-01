@@ -1,4 +1,5 @@
 import { useState } from "react";
+import cx from "classnames";
 import Section from "./Section";
 import { Arrow } from "./Arrow";
 
@@ -13,7 +14,7 @@ type WorkHistory = {
 type ResumeData = WorkHistory[]
 
 const Resume = () => {
-  const [data, setData] = useState<ResumeData>([
+  const data: ResumeData = [
     {
       company: "Human Rights First",
       position: "Lead Software Engineer",
@@ -42,7 +43,7 @@ const Resume = () => {
       endDate: "Jan 2021",
       responsibilities: ["Authored and maintained over 20+ virtual tabletop gaming sheets which are used by over 8 million players", "Resolved over 100+ bugs and feature requests in a 6 month period", "Collaborated with UI/UX to design wireframes and mockups for new features"]
     }
-  ])
+  ];
 
   const [activeCompany, setActiveCompany] = useState<WorkHistory>(data[0]);
 
@@ -50,12 +51,16 @@ const Resume = () => {
     setActiveCompany(company)
   }
 
-  return <section className="flex flex-col h-96">
+  return <section className="flex flex-col mb-16">
     <div className="flex w-full overflow-x-auto">
-      <div className="hidden md:block w-1 bg-secondary"></div>
       <ul className="flex w-full ml-4 scrollbar-thin scrollbar-track-primary scrollbar-thumb-secondary scrollbar-thumb-rounded">
         {data.map((item, index) => {
-          return <li key={index} className="w-max mt-4 px-4 h-12 whitespace-nowrap cursor-pointer" onClick={() => handleCompanyClick(item)}>
+          return <li key={index} className={cx("w-max mt-4 px-4 h-12 whitespace-nowrap cursor-pointer",
+            {
+              "sm:border-b-secondary sm:border-b-2 font-semibold text-secondary sm:text-white": activeCompany.company === item.company,
+            })
+          }
+            onClick={() => handleCompanyClick(item)}>
             {item.company}
           </li>
         })
