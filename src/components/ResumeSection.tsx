@@ -53,7 +53,7 @@ const Resume = () => {
   return <section className="flex flex-col h-96">
     <div className="flex w-full overflow-x-auto">
       <div className="hidden md:block w-1 bg-secondary"></div>
-      <ul className="flex w-full ml-4">
+      <ul className="flex w-full ml-4 scrollbar-thin scrollbar-track-primary scrollbar-thumb-secondary scrollbar-thumb-rounded">
         {data.map((item, index) => {
           return <li key={index} className="w-max mt-4 px-4 h-12 whitespace-nowrap cursor-pointer" onClick={() => handleCompanyClick(item)}>
             {item.company}

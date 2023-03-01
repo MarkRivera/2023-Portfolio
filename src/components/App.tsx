@@ -11,7 +11,7 @@ function App() {
   function applyPrimaryStyles() {
     const body = document.querySelector('body');
     if (body) {
-      body.classList.add("bg-primary", "text-white");
+      body.classList.add("bg-primary", "text-white", "scrollbar-thin", "scrollbar-track-primary", "scrollbar-thumb-secondary", "scrollbar-thumb-rounded");
     }
   };
 
@@ -20,7 +20,7 @@ function App() {
   }, [])
 
   return (
-    <main className='mt-20 max-w-7xl mx-auto relative'>
+    <main className='mt-20 max-w-7xl mx-auto relative scrollbar scrollbar-track-secondary'>
       <AnimatedLogo />
 
       {/* Navigation */}
