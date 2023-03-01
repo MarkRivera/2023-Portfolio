@@ -88,7 +88,7 @@ const Resume = () => {
 
 const ResumeSection = () => {
   return (
-    <Section title="Resume" number="02" children={<Resume />} />
+    <Section title="Resume" number="02" children={<Resume />} id="resume" />
   )
 }
 

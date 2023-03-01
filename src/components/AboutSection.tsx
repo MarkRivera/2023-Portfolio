@@ -9,16 +9,14 @@ const TechList = () => {
     'Next.js',
     'Node.js',
     'Express',
-    'MongoDB',
     'PostgreSQL',
     'JavaScript',
     'HTML',
     'CSS',
-    'Sass',
     'tRPC'
   ]
 
-  return <ul className='flex flex-col flex-wrap h-20'>
+  return <ul className='flex flex-col flex-wrap h-40'>
     {tech.map((tech, index) => {
       return <li key={index} className='flex items-center'>
         <Arrow />
@@ -58,7 +56,7 @@ const About = () => {
 
 const AboutSection = () => {
   return (
-    <Section number={"01"} title='About Me' children={<About />} />
+    <Section number={"01"} title='About Me' children={<About />} id='about' />
   )
 }
 

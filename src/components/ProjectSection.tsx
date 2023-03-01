@@ -79,7 +79,7 @@ const Projects = () => {
 
 const ProjectSection = () => {
   return (
-    <Section title="Projects" number="03" children={<Projects />} />
+    <Section title="Projects" number="03" children={<Projects />} id="projects" />
   )
 }
 

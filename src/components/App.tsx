@@ -5,6 +5,7 @@ import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ResumeSection from './ResumeSection';
 import ProjectSection from './ProjectSection';
+import ContactSection from './ContactSection';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
 
       {/* Projects */}
       <ProjectSection />
+
+      {/* Contact */}
+      <ContactSection />
     </main>
   )
 }

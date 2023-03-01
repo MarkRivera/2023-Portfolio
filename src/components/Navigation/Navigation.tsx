@@ -4,12 +4,16 @@ import cx from "classnames";
 import { useWindow } from "hooks/useWindow";
 
 const NavLogo = () => {
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <span className="border-solid border-secondary border-2 px-2 py-1 hover:text-secondary hover:bg-darkLogo transition-colors duration-300 cursor-pointer">M</span>
+    <span className="border-solid border-secondary border-2 px-2 py-1 hover:text-secondary hover:bg-darkLogo transition-colors duration-300 cursor-pointer" onClick={handleLogoClick}>M</span>
   )
 }
 
-const MobileNavBar = () => {
+const MobileNavBar = ({ navItems }: { navItems: JSX.Element[] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleIsOpen = () => {
@@ -38,11 +42,7 @@ const MobileNavBar = () => {
         }>
 
         <ul className="mt-20 ml-10">
-          <li className={linkStyles}><span className="text-secondary mr-2">01. </span> Home</li>
-          <li className={linkStyles}><span className="text-secondary mr-2">02. </span>About</li>
-          <li className={linkStyles}><span className="text-secondary mr-2">03. </span>Resume</li>
-          <li className={linkStyles}><span className="text-secondary mr-2">04. </span>Projects</li>
-          <li className={linkStyles}><span className="text-secondary mr-2">05. </span>Contact</li>
+          {navItems}
         </ul>
       </div>
     </>
@@ -51,12 +51,29 @@ const MobileNavBar = () => {
 
 const linkStyles = "flex items-center mr-4 cursor-pointer h-full hover:text-secondary transition-colors duration-300";
 const Navigation = () => {
+  const links = [
+    { name: "About", id: "about" },
+    { name: "Resume", id: "resume" },
+    { name: "Projects", id: "projects" },
+    { name: "Contact", id: "contact" },
+  ]
   const windowWidth = useWindow();
   const nav = useRef<HTMLElement>(null);
   useScroll(nav);
 
+  const handleNavClick = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  const navItems = links.map((link, index) => {
+    return <li key={index} className={linkStyles} onClick={() => handleNavClick(link.id)}><span className="text-secondary mr-2">0{index + 1}. </span>{link.name}</li>
+  })
+
   if (windowWidth < 768) {
-    return <MobileNavBar />
+    return <MobileNavBar navItems={navItems} />
   }
 
   // Collapsible nav menu for mobile
@@ -67,11 +84,7 @@ const Navigation = () => {
     <NavLogo />
 
     <ul className="flex h-full items-center">
-      <li className={linkStyles}><span className="text-secondary mr-2">01. </span> Home</li>
-      <li className={linkStyles}><span className="text-secondary mr-2">02. </span>About</li>
-      <li className={linkStyles}><span className="text-secondary mr-2">03. </span>Resume</li>
-      <li className={linkStyles}><span className="text-secondary mr-2">04. </span>Projects</li>
-      <li className={linkStyles}><span className="text-secondary mr-2">05. </span>Contact</li>
+      {navItems}
     </ul>
   </nav>
 }
